@@ -55,6 +55,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,6 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1001 &1064535522211975263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,10 +93,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: 45ACP Bullet_Casing
       objectReference: {fileID: 0}
+    - target: {fileID: 3625037896966406280, guid: a737d62f4ff0b854a9d767507f039686,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8403992145370945202, guid: a737d62f4ff0b854a9d767507f039686,
         type: 3}
       propertyPath: m_CollisionDetection
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535412081993147290, guid: a737d62f4ff0b854a9d767507f039686,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8535412081993147290, guid: a737d62f4ff0b854a9d767507f039686,
         type: 3}
@@ -113,6 +125,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535412081993147290, guid: a737d62f4ff0b854a9d767507f039686,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8535412081993147290, guid: a737d62f4ff0b854a9d767507f039686,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -125,16 +142,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8535412081993147290, guid: a737d62f4ff0b854a9d767507f039686,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8535412081993147290, guid: a737d62f4ff0b854a9d767507f039686,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8535412081993147290, guid: a737d62f4ff0b854a9d767507f039686,
         type: 3}
