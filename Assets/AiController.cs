@@ -6,12 +6,13 @@ using UnityEngine.AI;
 
 public class AiController : MonoBehaviour
 {
-
+    public Animator animator;
+    public PlayerController playerController;
     public NavMeshAgent navMeshAgent;
     public float startWaitTime = 4;
     public float timeToRotate = 2;
-    public float speedWalk = 6;
-    public float speedRun = 9;
+    private float speedWalk = 1;
+    private float speedRun = 2;
 
     public static event Action<AiController> OnEnemyKilled;
     public float health;
@@ -25,6 +26,7 @@ public class AiController : MonoBehaviour
     public float meshResolution = 1f;
     public float edgeIterations = 4;
     public float edgeDistance = 0.5f;
+    public bool dead = false;
 
     public Transform[] waypoints;
     int m_CurrentWaypointIndex;
@@ -65,23 +67,39 @@ public class AiController : MonoBehaviour
         print("tessa");
         if ( health <= 0)
         {
+            dead = true;
+            animator.SetTrigger("Death");
             print("test123");
-            Destroy(gameObject);
+            
             OnEnemyKilled?.Invoke(this);
+            playerController.updateScore();
+            
         }
     }
 
-    
+    public void EnemyDeath()
+    {
+        Destroy(gameObject);
+    }
     // Update is called once per frame
     void Update()
     {
         EnviromentView();
-        if(!m_IsPatrol)
+        if(dead == true)
         {
+            speedRun = 0;
+            speedWalk = 0;
+        }
+        else if(!m_IsPatrol)
+        {
+            animator.SetBool("Run", true);
+            animator.SetBool("Walk", false);
             Chasing();
         }
         else
         {
+            animator.SetBool("Walk", true);
+            animator.SetBool("Run", false);
             Patroling();
         }
     }

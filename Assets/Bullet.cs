@@ -9,8 +9,9 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.TryGetComponent<AiController>(out AiController controller))
         {
             controller.TakeDamage(50);
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
+       
     }
 }
